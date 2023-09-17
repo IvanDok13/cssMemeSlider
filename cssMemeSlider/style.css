@@ -66,17 +66,29 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  /* max-width: 1200px; */
+}
+
+@media screen and (max-width: 768px) {
+  .controls {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .texts {
+    width: 120%;
+    justify-self: flex-start;
+    align-self: start;
+  }
 }
 
 .texts {
   box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-  width: 600px;
-  height: 100px;
+  width: 80%;
+  height: 120px;
   position: relative;
   display: flex;
   justify-content: center;
-  align-self: center;
   flex-wrap: wrap;
   border-radius: 30px;
 }
@@ -93,6 +105,7 @@ input {
 
 .control-btn {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   flex-flow: nowrap;
   margin: 30px;
