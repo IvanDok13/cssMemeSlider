@@ -14,12 +14,10 @@ html {
 
 body {
   color: #000;
-  position: relative;
   background-color: rgb(237, 220, 220);
 }
 
 .container {
-  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   padding: 10px 10px;
@@ -31,7 +29,6 @@ body {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 10px;
-  position: relative;
   overflow: hidden;
   max-width: 550px;
   height: auto;
@@ -79,7 +76,6 @@ input {
   justify-content: center;
   align-self: center;
   text-align: left;
-  position: absolute;
   font-size: 2vw;
   padding: 10px 10px;
 }
@@ -93,7 +89,6 @@ input {
 }
 
 .slider-label {
-  position: relative;
   display: inline-block;
   height: 15px;
   width: 15px;
@@ -116,40 +111,34 @@ input {
   background-color: aqua;
 }
 
-.text-img {
-  /* opacity: 0; */
-}
-
-#img1:checked ~ .img1,
-#img1:checked ~ .text-img {
+#img1:checked~.img1 {
   margin-left: 0;
-  opacity: 1;
 }
 
-#img2:checked ~ .img1 {
+#img2:checked~.img1 {
   margin-left: -20%;
   opacity: 1;
 }
 
-#img3:checked ~ .img1 {
+#img3:checked~.img1 {
   margin-left: -40%;
   opacity: 1;
 }
 
-#img4:checked ~ .img1 {
+#img4:checked~.img1 {
   margin-left: -60%;
   opacity: 1;
 }
 
-#img5:checked ~ .img1 {
+#img5:checked~.img1 {
   margin-left: -80%;
 }
 
 .control-btn label:hover,
 #img1:checked~.control-btn label:nth-of-type(1),
-#img2:checked~.controls-btn label:nth-of-type(2),
-#img3:checked~.controls-btn label:nth-of-type(3),
-#img4:checked~.controls-btn label:nth-of-type(4),
-#img5:checked~.controls-btn label:nth-of-type(5) {
+#img2:checked~label:nth-of-type(2),
+#img3:checked~label:nth-of-type(3),
+#img4:checked~label:nth-of-type(4),
+#img5:checked~label:nth-of-type(5) {
   background: black;
 }
