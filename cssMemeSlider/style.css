@@ -1,5 +1,27 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: all 0.5s ease 0.1s;
+}
+
 body {
+  color: #000;
+  position: relative;
   background-color: rgb(237, 220, 220);
+}
+
+.container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .header {
@@ -15,45 +37,84 @@ body {
 }
 
 .wrapper {
-  position: relative;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   padding: 10px;
   margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  height: auto;
+}
+
+.slider-items {
+  width: 100%;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
 }
 
 input {
   display: none;
 }
 
-.slider {
-  position: relative;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-  width: 700px;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 40px;
-}
-
-.slide {
-  /* opacity: 0; */
-}
-
-.img {
-  position: absolute;
-  max-width: 100%;
-  border-radius: 40px;
-}
-
 .controls {
   display: flex;
-  justify-content: flex-start;
-  align-items: start;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
 }
 
 .texts {
-  max-width: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  width: 600px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  border-radius: 30px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  text-align: left;
+  position: absolute;
+  font-size: 2vw;
+  padding: 10px 10px;
+}
+
+.control-btn {
+  display: flex;
+  flex-direction: column;
+  flex-flow: nowrap;
+  margin: 30px;
+}
+
+.slider-label {
+  position: relative;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.control-btn label:after {
+  position: absolute;
+  border: 2px solid #ee0a0a;
+  content: " ";
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
 }
