@@ -3,9 +3,7 @@ html {
   box-sizing: border-box;
 }
 
-*,
-::after,
-::before {
+* {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -18,20 +16,20 @@ body {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 64rem;
   margin: 0 auto;
-  padding: 10px 10px;
+  padding: 0.625rem 0.625rem;
 }
 
 .wrapper {
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 10px;
-  overflow: hidden;
-  max-width: 550px;
+  max-width: 40rem;
   height: auto;
+  margin: 0 auto;
+  margin-bottom: 0.625rem;
+  overflow: hidden;
 }
 
 .slider-items {
@@ -39,7 +37,7 @@ body {
   height: auto;
   display: flex;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 0.9rem;
 }
 
 .slide {
@@ -49,7 +47,7 @@ body {
 .img {
   max-width: 100%;
   height: auto;
-  border-radius: 30px;
+  border-radius: 1.9rem;
 }
 
 input {
@@ -58,9 +56,8 @@ input {
 
 .controls {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -72,12 +69,11 @@ input {
 }
 
 .text {
-  display: flex;
-  justify-content: center;
-  align-self: center;
+  display: none;
   text-align: left;
-  font-size: 2vw;
-  padding: 10px 10px;
+  font-size: 1.6vw;
+  padding: 0.625rem 0.625rem;
+  animation: linear 0.5s ease;
 }
 
 .control-btn {
@@ -85,60 +81,90 @@ input {
   justify-content: center;
   flex-direction: column;
   flex-flow: nowrap;
-  margin: 30px;
+  margin: 1rem;
 }
 
 .slider-label {
   display: inline-block;
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
-  border-radius: 50%;
   cursor: pointer;
-  border: 2px solid;
-  transition: all 0.5s ease;
+  padding: 0.5rem;
 }
 
-.slider-label:hover,
-.slider-label:focus {
-  opacity: 0.5;
+.span {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 0.125rem solid green;
+  background-color: rgb(106, 106, 219);
 }
 
-
-.slider-label:visited,
-.slider-label:active {
-  opacity: 1;
-  background-color: aqua;
+.slider-label:hover>span {
+  background-color: white;
+  border: 0.15rem solid white;
 }
 
-#img1:checked~.img1 {
+#img1:checked~.slider-items .img1 {
   margin-left: 0;
 }
 
-#img2:checked~.img1 {
+#img2:checked~.slider-items .img1 {
   margin-left: -20%;
-  opacity: 1;
 }
 
-#img3:checked~.img1 {
+#img3:checked~.slider-items .img1 {
   margin-left: -40%;
-  opacity: 1;
 }
 
-#img4:checked~.img1 {
+#img4:checked~.slider-items .img1 {
   margin-left: -60%;
-  opacity: 1;
 }
 
-#img5:checked~.img1 {
+#img5:checked~.slider-items .img1 {
   margin-left: -80%;
 }
 
-.control-btn label:hover,
-#img1:checked~.control-btn label:nth-of-type(1),
-#img2:checked~label:nth-of-type(2),
-#img3:checked~label:nth-of-type(3),
-#img4:checked~label:nth-of-type(4),
-#img5:checked~label:nth-of-type(5) {
-  background: black;
+#img1:checked~.controls .texts .text:nth-child(1),
+#img2:checked~.controls .texts .text:nth-child(2),
+#img3:checked~.controls .texts .text:nth-child(3),
+#img4:checked~.controls .texts .text:nth-child(4),
+#img5:checked~.controls .texts .text:nth-child(5) {
+  display: block;
+  animation-name: text;
+}
+
+#img1:checked~.controls .control-btn .slider-label:nth-child(1) span,
+#img2:checked~.controls .control-btn .slider-label:nth-child(2) span,
+#img3:checked~.controls .control-btn .slider-label:nth-child(3) span,
+#img4:checked~.controls .control-btn .slider-label:nth-child(4) span,
+#img5:checked~.controls .control-btn .slider-label:nth-child(5) span {
+  background-color: rgb(255, 255, 255);
+}
+
+#img1:active~.controls .control-btn .slider-label:nth-child(1) span,
+#img2:active~.controls .control-btn .slider-label:nth-child(2) span,
+#img3:active~.controls .control-btn .slider-label:nth-child(3) span,
+#img4:active~.controls .control-btn .slider-label:nth-child(4) span,
+#img5:active~.controls .control-btn .slider-label:nth-child(5) span {
+  background-color: rgb(2, 116, 229);
+}
+
+#img1:checked~.controls .control-btn .slider-label:nth-child(1):hover span,
+#img2:checked~.controls .control-btn .slider-label:nth-child(2):hover span,
+#img3:checked~.controls .control-btn .slider-label:nth-child(3):hover span,
+#img4:checked~.controls .control-btn .slider-label:nth-child(4):hover span,
+#img5:checked~.controls .control-btn .slider-label:nth-child(5):hover span {
+  background-color: aqua;
+}
+
+@keyframes text {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
