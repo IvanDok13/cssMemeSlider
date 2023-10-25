@@ -1,0 +1,170 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: all 0.5s ease 0.1s;
+}
+
+body {
+  color: #000;
+  background-color: rgb(237, 220, 220);
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0.625rem 0.625rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 40rem;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 0.625rem;
+  overflow: hidden;
+}
+
+.slider-items {
+  width: 500%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+}
+
+.slide {
+  width: 20%;
+}
+
+.img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 1.9rem;
+}
+
+input {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .controls {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.text {
+  display: none;
+  text-align: left;
+  font-size: 1.6vw;
+  padding: 0.625rem 0.625rem;
+  animation: linear 0.5s ease;
+}
+
+.control-btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-flow: nowrap;
+  margin: 1rem;
+}
+
+.slider-label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.span {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 0.125rem solid green;
+  background-color: rgb(106, 106, 219);
+}
+
+.slider-label:hover>span {
+  background-color: white;
+  border: 0.15rem solid white;
+}
+
+#img1:checked~.slider-items .img1 {
+  margin-left: 0;
+}
+
+#img2:checked~.slider-items .img1 {
+  margin-left: -20%;
+}
+
+#img3:checked~.slider-items .img1 {
+  margin-left: -40%;
+}
+
+#img4:checked~.slider-items .img1 {
+  margin-left: -60%;
+}
+
+#img5:checked~.slider-items .img1 {
+  margin-left: -80%;
+}
+
+#img1:checked~.controls .texts .text:nth-child(1),
+#img2:checked~.controls .texts .text:nth-child(2),
+#img3:checked~.controls .texts .text:nth-child(3),
+#img4:checked~.controls .texts .text:nth-child(4),
+#img5:checked~.controls .texts .text:nth-child(5) {
+  display: block;
+  animation-name: text;
+}
+
+#img1:checked~.controls .control-btn .slider-label:nth-child(1) span,
+#img2:checked~.controls .control-btn .slider-label:nth-child(2) span,
+#img3:checked~.controls .control-btn .slider-label:nth-child(3) span,
+#img4:checked~.controls .control-btn .slider-label:nth-child(4) span,
+#img5:checked~.controls .control-btn .slider-label:nth-child(5) span {
+  background-color: rgb(255, 255, 255);
+}
+
+#img1:active~.controls .control-btn .slider-label:nth-child(1) span,
+#img2:active~.controls .control-btn .slider-label:nth-child(2) span,
+#img3:active~.controls .control-btn .slider-label:nth-child(3) span,
+#img4:active~.controls .control-btn .slider-label:nth-child(4) span,
+#img5:active~.controls .control-btn .slider-label:nth-child(5) span {
+  background-color: rgb(2, 116, 229);
+}
+
+#img1:checked~.controls .control-btn .slider-label:nth-child(1):hover span,
+#img2:checked~.controls .control-btn .slider-label:nth-child(2):hover span,
+#img3:checked~.controls .control-btn .slider-label:nth-child(3):hover span,
+#img4:checked~.controls .control-btn .slider-label:nth-child(4):hover span,
+#img5:checked~.controls .control-btn .slider-label:nth-child(5):hover span {
+  background-color: aqua;
+}
+
+@keyframes text {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
